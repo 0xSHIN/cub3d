@@ -168,19 +168,6 @@ void perform_raycasting(t_data *data)
         if ((side == 0 && ray_dir_x > 0) || (side == 1 && ray_dir_y < 0))
             tex_x = current_texture->width - tex_x - 1;
 
-        // dessin des murs texturés
-        y = draw_start;
-        double step = 1.0 * current_texture->height / line_height;
-        double tex_pos = (draw_start - WIN_HEIGHT / 2 + line_height / 2) * step;
-        while (y < draw_end)
-        {
-            tex_y = (int)tex_pos & (current_texture->height - 1);
-            tex_pos += step;
-            color = current_texture->data[tex_y * current_texture->width + tex_x];
-            mlx_pixel_put(data->mlx_ptr, data->win_ptr, x, y, color);
-            y++;
-        }
-
         // plafond
         y = 0;
         while (y < draw_start)
