@@ -65,8 +65,7 @@ void perform_raycasting(t_data *data)
     int line_height;
     int draw_start;
     int draw_end;
-    int tex_x, tex_y;
-    int color;
+    int tex_x;
     int y;
     t_texture *current_texture;
 
